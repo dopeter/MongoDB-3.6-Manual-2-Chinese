@@ -1,8 +1,6 @@
 # Description
 
-> sdfsdfsdfsdf
-
-
+Translate to Chinese.
 
 
 
