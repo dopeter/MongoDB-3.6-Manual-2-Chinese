@@ -1,5 +1,5 @@
 # Table of contents
 
 * [Description](README.md)
-* [1](1.md)
+* [MongoDB 3.6 手册](main.md)
 
