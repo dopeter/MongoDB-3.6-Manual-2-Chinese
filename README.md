@@ -4,7 +4,7 @@ Translate to Chinese.
 
 
 
-Orignal address:  [https://docs.mongodb.com/manual/](https://docs.mongodb.com/manual/)
+Original address:  [https://docs.mongodb.com/manual/](https://docs.mongodb.com/manual/)
 
 
 
