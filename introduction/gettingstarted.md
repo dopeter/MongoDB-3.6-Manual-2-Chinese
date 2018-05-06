@@ -117,7 +117,15 @@ db.inventory.find( { tags: ["red", "blank"] } )
 |  [Documents](https://docs.mongodb.com/manual/core/document/) |  [Indexes](https://docs.mongodb.com/manual/indexes/) |  [MongoDB Security](https://docs.mongodb.com/manual/security/) |  [Glossary](https://docs.mongodb.com/manual/reference/glossary/) |  |
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Python" %}
+和脚本一样的内容，只是示例代码不同。
+{% endtab %}
+
+{% tab title="Node.js" %}
+ 和脚本一样的内容，只是示例代码不同。
+{% endtab %}
+
+{% tab title="Compass" %}
 
 {% endtab %}
 {% endtabs %}
