@@ -58,7 +58,7 @@ BSON文档支持多个字段有同样的名称。但大多数MongoDB接口使用
 
 #### 字段值限制
 
-对于被索引的集合，索引的字段值有  [`Maximum Index Key Length`](https://docs.mongodb.com/manual/reference/limits/#Index-Key-Limit)` `限制（1MB的限值）。具体请参阅 [`Maximum Index Key Length`](https://docs.mongodb.com/manual/reference/limits/#Index-Key-Limit)  。
+对于被索引的集合，索引的字段值有  [`Maximum Index Key Length`](https://docs.mongodb.com/manual/reference/limits/#Index-Key-Limit) ``限制（1MB的限值）。具体请参阅 [`Maximum Index Key Length`](https://docs.mongodb.com/manual/reference/limits/#Index-Key-Limit)  。
 
 ### 点标记法（Dot Notation）
 
@@ -165,4 +165,58 @@ MongoDB按照写操作的顺序保留文档字段的顺序，以下情况除外�
 
 * 使用 [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#objectid)。
 * 使用原生唯一标识符，如果启用，会节省空间并避免额外的索引。
-* 
+* 生成自增长数字。
+* 在应用代码里生成唯一标识符（UUID）。在集合和\_id索引中更高效的存储UUID的方式推荐使用BSON BinData 数据类型。 BinData的索引键（index keys）如果符合以下标准会更高效的存储：
+  * 二进制子类型值为0-7或者128-135，并且
+  * 二进制数组的长度为： 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 20, 24, 或者32。
+* 使用驱动的BSON UUID生成组件来生成UUID。需要注意的是驱动实现的UUID在序列化和反序列化会有不同的逻辑，它可能与其他的驱动不兼容。更多请参阅  [driver documentation](https://api.mongodb.com/?_ga=2.108099906.1737614590.1528102232-358776125.1525329637)  关于UUID的互通性。
+
+{% hint style="success" %}
+注意
+
+大多数MongoDB驱动客户端会在发送插入操作前包含\_id字段以及生成ObjectId；然而，如果客户端发送一个文档没有包含\_id字段， [`mongod`](https://docs.mongodb.com/manual/reference/program/mongod/#bin.mongod) 会添加\_id字段并且生成ObjectId。
+{% endhint %}
+
+### 文档结构的其他用途
+
+除了定义数据记录，MongoDB始终使用文档结构，包含但不限于：[查询过滤](https://docs.mongodb.com/manual/core/document/#document-query-filter) ，[更新文档规格](https://docs.mongodb.com/manual/core/document/#document-update-specification) ， [索引文档规格](https://docs.mongodb.com/manual/core/document/#document-index-specification) 。
+
+#### 查询过滤文档
+
+查询过滤文档指定了条件来决定那些记录被查询来进行读取、更新、删除操作。
+
+你可以使用 &lt;field&gt;:&lt;value&gt;表达式来指定相等的条件以及[查询操作符](https://docs.mongodb.com/manual/reference/operator/query/) 表达式。
+
+```text
+{  <field1>: <value1>,  <field2>: { <operator>: <value> },  ...}
+```
+
+示例请参见：
+
+* [查询文档](https://docs.mongodb.com/manual/tutorial/query-documents/)
+* [查询嵌入式/嵌套文档](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
+* [查询一个数组](https://docs.mongodb.com/manual/tutorial/query-arrays/)
+* [查询在嵌入式文档中的数组](https://docs.mongodb.com/manual/tutorial/query-array-of-documents/)
+
+#### 更新文档规格
+
+更新文档规格使用[update操作符](https://docs.mongodb.com/manual/reference/operator/update/#id1) 在 [db.collection.update\(\)](https://docs.mongodb.com/manual/reference/method/db.collection.update/#db.collection.update) 执行期间在指定字段上的数据修改。
+
+```text
+{  <operator1>: { <field1>: <value1>, ... },  <operator2>: { <field2>: <value2>, ... },  ...}
+```
+
+更多示例，参见 [Update specifications](https://docs.mongodb.com/manual/tutorial/update-documents/#update-documents-modifiers)。
+
+#### 索引文档规格
+
+索引文档规格定义了要索引的字段以及索引的数据类型：
+
+```text
+{ <field1>: <type1>, <field2>: <type2>, ...  }
+```
+
+### 其他资源
+
+[关于文档的思考Part1](https://www.mongodb.com/blog/post/thinking-documents-part-1?jmp=docs&_ga=2.101276609.1737614590.1528102232-358776125.1525329637)
+

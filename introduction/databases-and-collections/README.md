@@ -41,7 +41,7 @@ db.myNewCollection2.insertOne( { x: 1 } )
 db.myNewCollection3.createIndex( { y: 1 } )
 ```
 
- 如果[`insertOne()`](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne) 和 [`createIndex()`](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#db.collection.createIndex)` 操作的集合不存在，它们会各自被创建。`
+ 如果[`insertOne()`](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne) 和 [`createIndex()`](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#db.collection.createIndex) `操作的集合不存在，它们会各自被创建。`
 
 关于集合名称的限制，参见[命名限制](https://docs.mongodb.com/manual/reference/limits/#restrictions-on-collection-names)。
 
@@ -75,5 +75,5 @@ featureCompatibilityVersion必须设置为“3.6”，更多内容见 [View Feat
 
 集合会被分配一个不变的UUID。集合的UUID在复制集和分片中不变。
 
-查询集合的UUID，可是使用  [listCollections](https://docs.mongodb.com/manual/reference/command/listCollections)命令或者 [`db.getCollectionInfos()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionInfos/#db.getCollectionInfos)` 方法。`
+查询集合的UUID，可是使用  [listCollections](https://docs.mongodb.com/manual/reference/command/listCollections)命令或者 [`db.getCollectionInfos()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionInfos/#db.getCollectionInfos) `方法。`
 

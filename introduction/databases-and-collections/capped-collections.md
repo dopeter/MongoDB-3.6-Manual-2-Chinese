@@ -63,7 +63,7 @@
 
 #### 创建一个定容集合
 
-创建定容集合必须显式的使用  [`db.createCollection()`](https://docs.mongodb.com/manual/reference/method/db.createCollection/#db.createCollection)` `方法，是Mongo Shell中创建命令的助手。创建定容集合时必须指定集合的容量计量单位是字节，MongoDB会为集合预分配。定容集合的空间中会有一小部分储存内部的头信息。
+创建定容集合必须显式的使用  [`db.createCollection()`](https://docs.mongodb.com/manual/reference/method/db.createCollection/#db.createCollection) ``方法，是Mongo Shell中创建命令的助手。创建定容集合时必须指定集合的容量计量单位是字节，MongoDB会为集合预分配。定容集合的空间中会有一小部分储存内部的头信息。
 
 ```text
 db.createCollection( "log", { capped: true, size: 100000 } )

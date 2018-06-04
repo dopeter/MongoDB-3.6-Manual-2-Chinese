@@ -35,7 +35,7 @@ db.inventory.insertMany([
 
  [`insertMany()`](https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/#db.collection.insertMany)`方法返回一个文档包含新插入文档的_id字段值。示例参见`[引用文档](https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/#insertmany-examples) 。
 
-使用  [`db.collection.insertOne()`](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne)` 新增一个单独的文档。`
+使用  [`db.collection.insertOne()`](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne) `新增一个单独的文档。`
 
 更多的内容和示例，参见[新增文档](https://docs.mongodb.com/manual/tutorial/insert-documents/#write-op-insert)在[CRUD](https://docs.mongodb.com/manual/crud/#crud)部分。
 
@@ -43,7 +43,7 @@ db.inventory.insertMany([
 
 #### 查询所有文档
 
-在一个集合中查询所有文档，传递一个空文档作为[查询过滤文档](https://docs.mongodb.com/manual/core/document/#document-query-filter)（query filter document）至 [`db.collection.find()`](https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find)` 方法：`
+在一个集合中查询所有文档，传递一个空文档作为[查询过滤文档](https://docs.mongodb.com/manual/core/document/#document-query-filter)（query filter document）至 [`db.collection.find()`](https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find) `方法：`
 
 
 

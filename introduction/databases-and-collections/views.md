@@ -75,18 +75,18 @@ db.createView(<view>, <source>, <pipeline>, <collation> )
 
 #### 分片视图
 
-如果基础集合是分片的，视图也会是分片的。因此，分片视图不支持在字段中使用  [`$lookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup)` 和` [`$graphLookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/graphLookup/#pipe._S_graphLookup)` `操作符。
+如果基础集合是分片的，视图也会是分片的。因此，分片视图不支持在字段中使用  [`$lookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup) `和` [`$graphLookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/graphLookup/#pipe._S_graphLookup) ``操作符。
 
 #### 视图和整理（Views and Collation）
 
 * 可以在创建视图的时候指定一个默认的整理（collation）。如果没有整理被指定，视图默认的整理是“简单”的二元对比整理器。意思是，视图不会继承基础集合的默认整理。
 * 视图的字符串比较使用默认的整理。尝试修改或者复写视图默认整理的操作会失败并返回错误。
 * 如果创建一个新视图是基于另外一个视图，不能指定和基础视图不同的整理。
-* 如果执行一个包含很多视图的聚合，如带有 [`$lookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup)` `或者  [`$graphLookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/graphLookup/#pipe._S_graphLookup)，这些视图必须是同样的整理。
+* 如果执行一个包含很多视图的聚合，如带有 [`$lookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup) ``或者  [`$graphLookup`](https://docs.mongodb.com/manual/reference/operator/aggregation/graphLookup/#pipe._S_graphLookup)，这些视图必须是同样的整理。
 
 #### 公共视图定义
 
-列出集合的操作，例如 [`db.getCollectionInfos()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionInfos/#db.getCollectionInfos)  和  [`db.getCollectionNames()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionNames/#db.getCollectionNames)` `，输出中包含视图的信息。
+列出集合的操作，例如 [`db.getCollectionInfos()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionInfos/#db.getCollectionInfos)  和  [`db.getCollectionNames()`](https://docs.mongodb.com/manual/reference/method/db.getCollectionNames/#db.getCollectionNames) ``，输出中包含视图的信息。
 
 {% hint style="warning" %}
 重要：
