@@ -8,8 +8,6 @@
 
 欢迎来到MongoDB 3.6手册！MongoDB 是一个开源的、专为舒适的开发与缩放而设计的文档数据库。手册介绍了MongoDB中的核心概念，提供了查询语言、操作和管理的注意事项、程序的综合参考。
 
-
-
 ### 入门
 
 MongoDB在以下的技术栈中提供了[入门指南](https://docs.mongodb.com/manual/tutorial/getting-started/)

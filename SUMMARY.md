@@ -13,5 +13,6 @@
   * [MongoDB 扩展JSON](introduction/mongodb-extended-json.md)
 * [安装](installation.md)
 * [mongo shell](mongo-shell.md)
-* [MongoDB CRUD 操作](crud-op.md)
+* [MongoDB CRUD 操作](crud-op/README.md)
+  * [插入文档](crud-op/insert-doc.md)
 

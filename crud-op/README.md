@@ -13,7 +13,7 @@ MongoDB支持如下的方法来插入文档至集合：
 
 在MongoDB中，插入操作的目标是单独的集合。MongoDB中所有的写操作在文档级别上是原子的。
 
-![](.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 示例请参见[插入文档](https://docs.mongodb.com/manual/tutorial/insert-documents/) 。
 
@@ -25,7 +25,7 @@ MongoDB支持如下的方法来插入文档至集合：
 
 你可以选择[过滤或者条件](https://docs.mongodb.com/manual/tutorial/query-documents/#read-operations-query-argument)来指定返回的文档
 
-![](.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
 示例请参见：
 
@@ -46,7 +46,7 @@ MongoDB支持如下的方法来插入文档至集合：
 
 你可以指定条件或者过滤来确定要更新的文档。过滤器使用的语法和读操作一样。
 
-![](.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 示例请参见[更新文档](https://docs.mongodb.com/manual/tutorial/update-documents/)。
 
